@@ -4,7 +4,7 @@ import SignIn from "./components/signIn";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" id="loader">
       <Router>
         <Routes>
           <Route path="/" element={<SignIn />} />

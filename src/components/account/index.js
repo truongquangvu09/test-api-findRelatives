@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import * as reportServices from "../../apiServer/report";
+import Loader from "../loader";
 import "./account.css";
 
 function Account() {
@@ -10,6 +11,7 @@ function Account() {
   });
   console.log("userInfo", userInfo);
   const [data, setData] = useState([]);
+  const [loader, setLoader] = useState();
 
   const handleInputChange = (event) => {
     const target = event.target;
