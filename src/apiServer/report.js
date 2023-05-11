@@ -30,3 +30,15 @@ export const deleteAccount = async (id) => {
     throw new Error("Xóa tài khoản không thành công");
   }
 };
+
+export const signIn = async (email, password) => {
+  try {
+    const res = await request.post("report/login", {
+      email: email,
+      password: password,
+    });
+    return res;
+  } catch (error) {
+    throw new Error("Đăng nhập không thành công");
+  }
+};

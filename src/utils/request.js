@@ -2,7 +2,7 @@ import axios from "axios";
 
 const request = axios.create({
   baseURL: "http://localhost:8080/api/v1/",
-  timeout: 1000,
+  timeout: 10000,
 });
 
 export const get = async (path) => {
@@ -16,7 +16,7 @@ export const post = async (path, object = {}) => {
 };
 
 export const deleted = async (path, id) => {
-  const response = await request.delete(path, id);
+  await request.delete(path, id);
   return "deleted";
 };
 

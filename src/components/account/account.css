@@ -1,3 +1,7 @@
 .form-input {
   display: inline-grid;
 }
+.signIn {
+  display: inline-grid;
+  margin-left: 50px;
+}

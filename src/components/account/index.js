@@ -8,9 +8,8 @@ function Account() {
     email: "",
     password: "",
   });
-
+  console.log("userInfo", userInfo);
   const [data, setData] = useState([]);
-  const [id, setId] = useState("");
 
   const handleInputChange = (event) => {
     const target = event.target;
@@ -24,7 +23,7 @@ function Account() {
 
   const handleSubmit = async (event) => {
     // event.preventDefault();
-    const result = await reportServices.create(
+    await reportServices.create(
       userInfo.name,
       userInfo.email,
       userInfo.password
@@ -42,12 +41,12 @@ function Account() {
       console.log(result);
       setData(result);
     };
-    console.log({ data });
+    console.log(data);
 
     fetchApi();
   }, []);
   return (
-    <div>
+    <div className="account-page">
       <form className="form-input" onSubmit={handleSubmit}>
         <label>Name</label>
         <input
@@ -78,6 +77,7 @@ function Account() {
         />
         <button type="submit">Tạo tài khoản</button>
       </form>
+
       <div className="data-account">
         <h1>Thông tin account</h1>
         {data.map((item, index) => {
